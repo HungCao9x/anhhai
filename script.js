@@ -2,6 +2,7 @@ const originalNumbers = document.getElementById("originalNumbers");
 const resultNumbers = document.getElementById("resultNumbers");
 const submitButton = document.getElementById("submitButton");
 const refreshButton = document.getElementById("refreshButton");
+const copyButton = document.getElementById("copyButton");
 
 submitButton.addEventListener("click", function() {
   let numbers = originalNumbers.value.split(",");
@@ -20,4 +21,8 @@ submitButton.addEventListener("click", function() {
 });
 refreshButton.addEventListener("click", function() {
   location.reload();
+});
+copyButton.addEventListener("click", function() {
+  resultNumbers.select();
+  document.execCommand("copy");
 });
